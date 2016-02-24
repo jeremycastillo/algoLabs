@@ -1,5 +1,8 @@
 # Lab 1 -- Stable Marriage Problem
 
+* Jeremy Castillo
+* jcc4428
+
 ## Part 1
 
 ### a, b, c
