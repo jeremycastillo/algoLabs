@@ -9,6 +9,7 @@ To prove there always exists a perfect matching is weakly stable it suffices to 
 
 **Algorithm:**
 	*A - set of all apartments, T - set of all tenants*
+	
 	Initially all a in A, all t in T are free 
 	
 	while there is a tenant t who if free and hasn't tried to rent every apartment
@@ -42,7 +43,7 @@ To prove the algorithm terminates it is helpful to define a measure of progress.
 
 **Correctness:**
 	
-	Proof the return set is a perfect matching. 
+	a Proof the return set is a perfect matching. 
 	Suppose the algorithm 
 
 ### d
