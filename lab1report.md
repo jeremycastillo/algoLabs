@@ -3,7 +3,7 @@
 ## Part 1
 
 ### a, b, c
-To prove there always exists a perfect matching is weakly stable it suffices to find an alogorithm, and prove its correctness. 
+To prove there always exists a perfect matching is weakly stable it suffices to find an algorithm, and prove its correctness. 
 
 *b)*
 
@@ -58,7 +58,11 @@ Prefer in this algorithm stricly means there is a higher preference (which means
 
 In the exectution of the problem, t last tried to pair with a'. So did t ever propose to a? If t didn't, then a' is higher on t's preference list. However, this contradcits the preference list of t we started with. If t did, then t did not pair with a because a was paired with some other tenant t'' which a stricly prefers to t. So either t'' is t' or a strictly prefers t' to t''. Either way this contradicts a's preference list where a prefers t to t'. Therefore it is a weakly stable matching. 
 
+By proving the algorithm terminates and returns a correct result we have shown there always exists a perfect weakly stable matching.
+
 ### d
+
+To prove the algorithm terminates it is helpful to define a measure of progress. Progress in this case will be defined with P(.) where P(t) represents the number of pairs (t,a) such that t has tried to rent a at the end of iteration t. Then for p(t+n), where n > 0, the size of P(t+n) is greater than P(t). This is because every iteration has a tenant t trying to rent one apartment. But since there are k tenants and k apartments there are k^2 possible pairs in total. Since one iteration increases the number of pairs for a tenant t by one the highest number of iterations that can occur are k^2. Therefore, the maximum number of iterations is k^2 and the algorithm terminates.
 
 ### e
 
