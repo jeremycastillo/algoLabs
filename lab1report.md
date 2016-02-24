@@ -14,3 +14,6 @@
 ### e
 
 ### f
+![Brute Force Graph](screenshots/bruteForce.jpg)
+
+![GS Graph](screenshots/gs.jpg)
