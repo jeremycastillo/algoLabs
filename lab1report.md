@@ -8,7 +8,7 @@ To prove there always exists a perfect matching is weakly stable it suffices to 
 *b)*
 
 **Algorithm:**
-	*A - set of all apartments, T - set of all tenants*
+*A - set of all apartments, T - set of all tenants*
 	
 	Initially all a in A, all t in T are free 
 	
@@ -44,14 +44,26 @@ To prove the algorithm terminates it is helpful to define a measure of progress.
 
 **Correctness:**
 	
-	a Proof the return set is a perfect matching. 
-	Suppose the algorithm 
+First I one needs to prove the algorithm returns a perfect matching. Suppose the algorithm finished with a free tenant t. 
+
+Since the algorithm terminated it is the case that t tried to pair with every apartment. So if the tenant did try to pair with every apartment and did not pair up after that it implies each apartment is matched with a tenant. Since there are n tenants and apartments then every one is matched (which is a perfect matching) but also there is a tenant free. This is a contradiction. So the loop cannot exit with a free tenant. 
+
+So if the algorithm did terminate with a free tenant it contradicts the paragraph above, so there cannot be a free tenant who has tried to pair with every apartment. Thus the matching is perfect.  
+
+Since S it is a perfect matching to prove it is a weakly stable matching I'll start by assuming there exists an instability, and use this to obtain a contradiction. An instability in this case would occur if:
+	two pairs: (t, a') and (t', a)
+	t prefers a to a'
+	a prefers t to t' 
+Prefer in this algorithm stricly means there is a higher preference (which means a tenant ranks apartment 0 as a 1 and apartment 2 as a 3 i.e. tenant prefers apartment 0) and ties (tenant ranks apartment 0 and 1 as 2, so the only way tenant will leave either of those apartments is if he ranks another apartment as a 1) will not be treated as a higher preference.
+
+In the exectution of the problem, t last tried to pair with a'. So did t ever propose to a? If t didn't, then a' is higher on t's preference list. However, this contradcits the preference list of t we started with. If t did, then t did not pair with a because a was paired with some other tenant t'' which a stricly prefers to t. So either t'' is t' or a strictly prefers t' to t''. Either way this contradicts a's preference list where a prefers t to t'. Therefore it is a weakly stable matching. 
 
 ### d
 
 ### e
 
 ### f
+
 ![Brute Force Graph](screenshots/bruteForce.jpg)
 
 ![GS Graph](screenshots/gs.jpg)
