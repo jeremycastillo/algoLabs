@@ -65,16 +65,12 @@ By proving the algorithm terminates and returns a correct result we have shown t
 
 ### d
 
-To prove the algorithm terminates it is helpful to define a measure of progress. Progress in this case will be defined with P(.) where P(t) represents the number of pairs (t,a) such that t has tried to rent a at the end of iteration t. Then for p(t+n), where n > 0, the size of P(t+n) is greater than P(t). This is because every iteration has a tenant t trying to rent one apartment. But since there are k tenants and k apartments there are k^2 possible pairs in total. Since one iteration increases the number of pairs for a tenant t by one the highest number of iterations that can occur are k^2. Therefore, the maximum number of iterations is k^2 and the algorithm terminates.
+To prove the algorithm terminates it is helpful to define a measure of progress. Progress in this case will be defined with P(.) where P(t) represents the number of pairs (t,a) such that t has tried to rent a at the end of iteration t. Then for p(t+n), where n > 0, the size of P(t+n) is greater than P(t). This is because every iteration has a tenant t trying to rent one apartment. But since there are k tenants and k apartments there are k^2 possible pairs in total. Since one iteration increases the number of pairs for a tenant t by one the highest number of iterations that can occur are k^2. Therefore, the maximum number of iterations is k^2 and the algorithm terminates. So the algorithm is O(n^2).
 
 ### e
 
+The brute force algorithm is O(n!). This is because to find all the permutations of n tenants and apartments being paired you first start with n and find all the combinations. Then you subtract 1 and find all the combinations. The worst case is you don't find a combination and go through all the permutations. This means (n)(n-1)(n-2)...(3)(2)(1). Therefore the brute force algorithm is O(n!).
+
 ### f
 
-![Brute Force Graph](screenshots/bruteForce.jpg)
-
-![GS Graph](screenshots/gs.jpg)
-
-
-
-
+![Brute Force vs GS Graph](screenshots/gsvsbf.png)
