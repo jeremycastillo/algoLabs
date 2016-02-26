@@ -71,7 +71,7 @@ To prove the algorithm terminates it is helpful to define a measure of progress.
 
 ### e
 
-The brute force algorithm is O(n!). This is because to find all the permutations of n tenants and apartments being paired you first start with n and find all the combinations. Then you subtract 1 and find all the combinations. The worst case is you don't find a combination and go through all the permutations. This means (n)(n-1)(n-2)...(3)(2)(1). In addition since the isStableMatching method takes O(n^2) times in the worst case. This method is called for every permutation and since there are a total of n! permutations the upper bound on the time complexity of the brute force method is O(n! * n^2). 
+The brute force algorithm is O(n!). This is because to find all the permutations of n tenants and apartments being paired you first start with n and find all the combinations. Then you subtract 1 and find all the combinations. The worst case is you don't find a combination and go through all the permutations. This means (n)(n-1)(n-2)...(3)(2)(1) which is n!. In addition since the isStableMatching method takes O(n^2) because if the matching is stable you have to check all the cases where a tenant prefers another apartment to its current pair. Since there are n tenants and n apartments this leads to O(n^2). Finally, this method is called for every permutation and since there are a total of n! permutations the upper bound on the time complexity of the brute force method is O(n! * n^2). 
 
 ### f
 
