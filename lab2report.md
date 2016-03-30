@@ -44,14 +44,19 @@ The first for loop is O(V) because it creates an array list for each of the vert
 The runtime complexity of my implementation of Dijkstra's algorithm is O(V^2). This is because the algorithm uses a find min function, which finds the smallest distance in the unvisited vertices list. This takes O(V) time. In the worst case this happens for all the vertices, which makes the runtime complexity O(V^2).
 
 ### Runtime Efficiency and Success Rate
+ 
+*(a)*
 
 ![GPSR](screenshots/gpsr.png)
 
+*(b)*
+
 ![Latency](screenshots/latency.png)
+
+*(c)*
 
 ![Hops](screenshots/hops.png)
 
-
-
+*(d)*
 
 
