@@ -15,6 +15,8 @@ However, GPSR is not optimal because it only builds the solition based on the ge
 
 For example there could be a graph with six vertices. Using GPSR the shortest non optimal path to the sink could be x vertices long but have a total latency of A. But there could exist another path to the sink with y vertices and have a total latency of B. Assume A > B. Then GPSR found the shortest path there exists another path with a lower latency. 
 
+The other case that could arise is where there is a vertex A with two vertices B and C within the transmission range of A. The path taken with B leads to a dead end and the path taken with C leads to the sink vertex. However assume B is closer to the sink than B. GPSR would choose B and fail when it reached the dead end. 
+
 *(b)*
 
 
@@ -28,14 +30,14 @@ I used an array list of array lists to represent the graph with an adjacency lis
 
 I have a function called maekAdjacencyDijkstraList(...) which makes the adjacency list for the program.
 
-    for each vertex v in the location array list
-        add new arraylist for v
+	for each vertex v in the location array list
+		add new arraylist for v
 
-    for each edge e in the edges array list
-        get vertices v1 and v2 of e
-        if v1.distance(v2) < transmission range
-            add v1 to v2 adjacency list
-            add v2 to v1 adjacency list
+	for each edge e in the edges array list
+		get vertices v1 and v2 of e
+		if v1.distance(v2) < transmission range
+			add v1 to v2 adjacency list
+			add v2 to v1 adjacency list
 
 The first for loop is O(V) because it creates an array list for each of the vertices. The second loop is O(E) because it checks all possible edges for this graph and adds the valid ones to the graph representation.
 
