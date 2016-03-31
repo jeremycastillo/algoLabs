@@ -47,16 +47,40 @@ The runtime complexity of my implementation of Dijkstra's algorithm is O(V^2). T
  
 *(a)*
 
-![GPSR](screenshots/gpsr.png)
+Transmission Range = 1.0 meters  | Average Time = 2943 ns
+Transmission Range = 5.0 meters  | Average Time = 2190 ns
+Transmission Range = 10.0 meters | Average Time = 217  ns
+Transmission Range = 15.0 meters | Average Time = 194  ns
+Transmission Range = 20.0 meters | Average Time = 181  ns
+Transmission Range = 25.0 meters | Average Time = 285  ns
 
 *(b)*
 
-![Latency](screenshots/latency.png)
+Transmission Range = 1.0 meters  | Average Time = 37532   ns
+Transmission Range = 5.0 meters  | Average Time = 721896  ns
+Transmission Range = 10.0 meters | Average Time = 1114120 ns
+Transmission Range = 15.0 meters | Average Time = 1134992 ns
+Transmission Range = 20.0 meters | Average Time = 1134992 ns
+Transmission Range = 25.0 meters | Average Time = 1128039 ns
+
 
 *(c)*
 
-![Hops](screenshots/hops.png)
+Transmission Range = 1.0 meters  | Average Time = 45094   ns
+Transmission Range = 5.0 meters  | Average Time = 789712  ns
+Transmission Range = 10.0 meters | Average Time = 1384979 ns
+Transmission Range = 15.0 meters | Average Time = 1423733 ns
+Transmission Range = 20.0 meters | Average Time = 1420922 ns
+Transmission Range = 25.0 meters | Average Time = 1420237 ns
 
 *(d)*
+
+![GPSR](screenshots/gpsr.png)
+
+![Latency](screenshots/latency.png)
+
+![Hops](screenshots/hops.png)
+
+As the radius increases so do the adjacency lists of each vertex because more nodes will be closer in distance. So the space efficiency should stay O(V + E) but have more edges. While the run time complexity will grow because the size of the adjacency list grows so too does the iterations for Dijkstra algorithm. If latency was not an issue, then GPSR seems to perform better as the transmission range increases. But if latency needs to be considered then Dijkstra should be used with lower transmission ranges with this implementation to increase speed. 
 
 
