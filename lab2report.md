@@ -19,6 +19,7 @@ The other case that could arise is where there is a vertex A with two vertices B
 
 *(b)*
 
+Dijkstra using hops of weight one looks for the shortest path from the source to the sink. So it would always find the shortest path from the source to the sink if one exists. However it does not consider latency so it is still not the optimal solution. 
 
 ### Runtime Efficiency
 
